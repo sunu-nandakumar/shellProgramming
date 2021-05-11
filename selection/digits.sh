@@ -2,18 +2,25 @@
 read -p  " Enter the number " n
 
 
-if [ (($n%10)) -eq 0 ]
+if [ $n -eq 1 ]
 then
-echo 'ten'
-elif [ $n -eq 2 ]
+echo 'unit'
+elif [ $n -eq 10 ]
 then
-echo 'Monday'
-elif [ $n -eq 3 ]
+echo 'Ten'
+elif [ $n -eq 100 ]
 then
-echo 'Tuesday'
-elif [ $n -eq 4 ]
+echo 'Hundred'
+elif [ $n -eq 1000 ]
 then
-echo 'Wednesday'
+echo 'thousand'
+elif [ $n -eq 10000 ]
+then
+echo 'ten thousand'
+elif [ $n -eq 100000 ]
+then
+echo 'hundred thousand'
+
 else
-echo 'enter a number between 1 to 7.'
+echo 'enter a number in tens.'
 fi
