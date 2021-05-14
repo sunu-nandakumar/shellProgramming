@@ -1,0 +1,37 @@
+#!/bin/bash -x
+
+IS_FULLTIME=1
+IS_PARTTIME=2
+MAX_HRS_IN_MONTH=20
+EMP_RATE_PER_HR=20
+NUM_WORKING_DAYS=5
+
+totalEmpHrs=0
+totalWorkingDays=0
+
+
+while [[ $totalEmpHrs -lt $MAX_HRS_IN_MONTH && 
+			$totalWorkingDays -lt $NUM_WORKING_DAYS ]]
+
+do
+((totalWorkingDays++))
+
+emp=$((RANDOM%3))
+
+case $emp in 
+$IS_FULLTIME)
+	emphrs=8
+;;
+
+$IS_PARTTIME)
+	emphrs=4
+;;
+*)
+	emphrs=0
+;;
+esac
+totalEmpHrs=$(($totalEmpHrs+$emphrs))
+done
+wage=$(($EMP_RATE_PER_HR*$totalEmpHrs))
+
+

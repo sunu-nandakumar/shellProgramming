@@ -9,6 +9,6 @@ read -p  " Enter the number " n
         1000) echo  "Thousand" ;;
         10000) echo "Ten Thousand" ;;
         100000) echo  "hundred thousand" ;;
-        1000000) echo  "million" ;;
+        1000000 b ) echo  "million" ;;
          *) echo " enter number btw 1-1000000" ;;
     esac
