@@ -26,7 +26,8 @@ while [ $n -gt 0 ]
 do
     s=$(( $n % 10 ))
     n=$(( $n / 10 ))
-       rev=$( echo ${rev}${s} )
+       rev=$(( ${rev}${s} ))
+	 
 done
 echo $rev
 }
@@ -34,11 +35,12 @@ echo $rev
 read -p  " if $n is prime number press 1 else 2 " choice
 
 case $choice in 1)
-primepali=$( palindrome $n )
+primepali="$( palindrome $n )"
 if [[ $choice -eq 1 ]]
 then
 n=$primepali
-prime $primepali
+check="$( prime $primepali )"
+echo $check
 fi
 ;;
 
